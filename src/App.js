@@ -14,19 +14,11 @@ class App extends Component {
     super(props);
     this.state = {
       foo: 'bar',
-      resumeData: {},
+      resumeData: { ...data },
     };
 
     ReactGA.initialize('UA-154366389-1');
     ReactGA.pageview(window.location.pathname);
-  }
-
-  getResumeData() {
-    this.setState({ resumeData: data });
-  }
-
-  componentDidMount() {
-    this.getResumeData();
   }
 
   render() {
