@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import ReactGA from 'react-ga';
+import ReactGA from 'react-ga';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -10,7 +10,6 @@ import Portfolio from './Components/Portfolio';
 import { data } from './common/constants';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,9 +17,8 @@ class App extends Component {
       resumeData: {},
     };
 
-    // ReactGA.initialize('UA-110570651-1');
-    // ReactGA.pageview(window.location.pathname);
-
+    ReactGA.initialize('UA-154366389-1');
+    ReactGA.pageview(window.location.pathname);
   }
 
   getResumeData() {
@@ -33,13 +31,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
+      <div className='App'>
+        <Header data={this.state.resumeData.main} />
+        <About data={this.state.resumeData.main} />
+        <Resume data={this.state.resumeData.resume} />
+        <Portfolio data={this.state.resumeData.portfolio} />
         {/*<Testimonials data={this.state.resumeData.testimonials}/>*/}
-        <Footer data={this.state.resumeData.main}/>
+        <Footer data={this.state.resumeData.main} />
       </div>
     );
   }
