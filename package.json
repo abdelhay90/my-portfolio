@@ -88,6 +88,7 @@
     "jsinspect": "^0.12.7",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "source-map-explorer": "^2.1.2"
   },
   "jest": {
@@ -144,5 +145,16 @@
     "presets": [
       "react-app"
     ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
