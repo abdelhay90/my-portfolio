@@ -31,6 +31,7 @@
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "4.0.0-beta.5",
+    "http-server": "^0.12.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-environment-jsdom-fourteen": "0.1.0",
@@ -64,7 +65,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "HTTPS=true node scripts/start.js",
+    "start": "npx http-server build/",
     "start-dev": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
