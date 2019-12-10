@@ -13,7 +13,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foo: 'bar',
       resumeData: { ...data },
     };
 
@@ -22,14 +21,16 @@ class App extends Component {
   }
 
   render() {
+    const {
+      resumeData: { main, resume, portfolio },
+    } = this.state;
     return (
       <div className='App'>
-        <Header data={this.state.resumeData.main} />
-        <About data={this.state.resumeData.main} />
-        <Resume data={this.state.resumeData.resume} />
-        <Portfolio data={this.state.resumeData.portfolio} />
-        {/*<Testimonials data={this.state.resumeData.testimonials}/>*/}
-        <Footer data={this.state.resumeData.main} />
+        <Header data={main} />
+        <About data={main} />
+        <Resume data={resume} />
+        <Portfolio data={portfolio} />
+        <Footer data={main} />
       </div>
     );
   }

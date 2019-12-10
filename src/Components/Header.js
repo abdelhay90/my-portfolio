@@ -1,52 +1,54 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Header = ({ data }) => {
-  console.log(data);
-  const { name, occupation, description, social, address } = data;
-  const city = address.city;
-  const networks = social.map(function(network) {
-    return (
-      <li key={network.name}>
-        <a href={network.url}>
-          <i className={network.className} />
-        </a>
-      </li>
-    );
-  });
+  const {
+    name,
+    occupation,
+    description,
+    social,
+    address: { city },
+  } = data;
+  const networks = social.map(item => (
+    <li key={item.name}>
+      <a href={item.url}>
+        <i className={item.className} />
+      </a>
+    </li>
+  ));
 
   return (
     <header id='home'>
       <nav id='nav-wrap'>
-        <a className='mobile-btn' href={'#nav-wrap'} title='Show navigation'>
+        <a className='mobile-btn' href='#nav-wrap' title='Show navigation'>
           Show navigation
         </a>
-        <a className='mobile-btn' href={'#home'} title='Hide navigation'>
+        <a className='mobile-btn' href='#home' title='Hide navigation'>
           Hide navigation
         </a>
 
         <ul id='nav' className='nav'>
           <li className='current'>
-            <a className='smoothscroll' href={'#home'}>
+            <a className='smoothscroll' href='#home'>
               Home
             </a>
           </li>
           <li>
-            <a className='smoothscroll' href={'#about'}>
+            <a className='smoothscroll' href='#about'>
               About
             </a>
           </li>
           <li>
-            <a className='smoothscroll' href={'#resume'}>
+            <a className='smoothscroll' href='#resume'>
               Resume
             </a>
           </li>
           <li>
-            <a className='smoothscroll' href={'#portfolio'}>
-              Works
+            <a className='smoothscroll' href='#portfolio'>
+              Projects
             </a>
           </li>
-          {/*<li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-            <li><a className="smoothscroll" href="#contact">Contact</a></li>*/}
+          {/* <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
+            <li><a className="smoothscroll" href="#contact">Contact</a></li> */}
         </ul>
       </nav>
 
@@ -62,7 +64,7 @@ const Header = ({ data }) => {
       </div>
 
       <p className='scrolldown'>
-        <a className='smoothscroll' href={'#about'}>
+        <a className='smoothscroll' href='#about'>
           <i className='icon-down-circle' />
         </a>
       </p>

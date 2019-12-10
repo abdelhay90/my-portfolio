@@ -84,6 +84,9 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.1.0",
     "jsinspect": "^0.12.7",
     "lint-staged": "^9.5.0",
